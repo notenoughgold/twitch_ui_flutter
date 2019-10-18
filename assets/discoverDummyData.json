@@ -1,0 +1,95 @@
+{
+    "top_channels": [
+        {
+            "streamer_name": "Jake",
+            "category_name": "Just Chatting",
+            "tag": "English",
+            "thumbnail": "http://lorempixel.com/output/sports-q-c-600-300-10.jpg",
+            "views": "4.2K"
+        },
+        {
+            "streamer_name": "Tommy",
+            "category_name": "StarCraft",
+            "tag": "Strategy",
+            "thumbnail": "http://lorempixel.com/output/city-q-c-600-300-2.jpg",
+            "views": "16.2K"
+        },
+        {
+            "streamer_name": "Jennifer",
+            "category_name": "Hearthstone",
+            "tag": "Family Friendly",
+            "thumbnail": "https://picsum.photos/id/1016/600/300",
+            "views": "950"
+        }
+    ],
+    "recommended_channels": [
+        {
+            "streamer_name": "King",
+            "streamer_avatar": "http://lorempixel.com/output/cats-q-c-100-100-1.jpg",
+            "stream_title": "Kappa",
+            "category_name": "World of Warcraft",
+            "tag": "MMORPG",
+            "thumbnail": "https://picsum.photos/id/1039/534/300",
+            "views": "5.6K"
+        },
+        {
+            "streamer_name": "Erik",
+            "streamer_avatar": "http://lorempixel.com/output/animals-q-c-100-100-10.jpg",
+            "stream_title": "Yo",
+            "category_name": "StarCraft",
+            "tag": "Strategy",
+            "thumbnail": "https://picsum.photos/id/1033/534/300",
+            "views": "513"
+        },
+        {
+            "streamer_name": "Lily",
+            "streamer_avatar": "http://lorempixel.com/output/animals-q-c-100-100-8.jpg",
+            "stream_title": "Chill Stream",
+            "category_name": "League of Legends",
+            "tag": "Competitive",
+            "thumbnail": "https://picsum.photos/id/1022/534/300",
+            "views": "10.1K"
+        },
+        {
+            "streamer_name": "Molly",
+            "streamer_avatar": "http://lorempixel.com/output/animals-q-c-100-100-9.jpg",
+            "stream_title": "Hey guys",
+            "category_name": "Music",
+            "tag": "English",
+            "thumbnail": "http://lorempixel.com/output/nature-q-c-600-300-6.jpg",
+            "views": "69"
+        }
+    ],
+    "recommended_categories": [
+        {
+            "category_name": "Just Chatting",
+            "category_cover": "https://picsum.photos/id/1016/200/300",
+            "viewer_count": "105.2K",
+            "tag": "IRL"
+        },
+        {
+            "category_name": "Fortnite",
+            "category_cover": "https://picsum.photos/id/1011/200/300",
+            "viewer_count": "155.2K",
+            "tag": "Shooter"
+        },
+        {
+            "category_name": "Art",
+            "category_cover": "https://picsum.photos/id/1008/200/300",
+            "viewer_count": "2.3K",
+            "tag": "Creative"
+        },
+        {
+            "category_name": "Warcraft",
+            "category_cover": "https://picsum.photos/id/1006/200/300",
+            "viewer_count": "3.4K",
+            "tag": "Strategy"
+        },
+        {
+            "category_name": "Dota 2",
+            "category_cover": "https://picsum.photos/id/1024/200/300",
+            "viewer_count": "54.2K",
+            "tag": "MOBA"
+        }
+    ]
+}
