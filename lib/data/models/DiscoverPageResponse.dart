@@ -10,21 +10,21 @@ class DiscoverPageResponse {
 
   DiscoverPageResponse.fromJson(Map<String, dynamic> json) {
     if (json['top_channels'] != null) {
-      topChannels = new List<TopChannels>();
+      topChannels = <TopChannels>[];
       json['top_channels'].forEach((v) {
-        topChannels.add(new TopChannels.fromJson(v));
+        topChannels.add(TopChannels.fromJson(v));
       });
     }
     if (json['recommended_channels'] != null) {
-      recommendedChannels = new List<LiveChannels>();
+      recommendedChannels = <LiveChannels>[];
       json['recommended_channels'].forEach((v) {
-        recommendedChannels.add(new LiveChannels.fromJson(v));
+        recommendedChannels.add(LiveChannels.fromJson(v));
       });
     }
     if (json['recommended_categories'] != null) {
-      recommendedCategories = new List<RecommendedCategories>();
+      recommendedCategories = <RecommendedCategories>[];
       json['recommended_categories'].forEach((v) {
-        recommendedCategories.add(new RecommendedCategories.fromJson(v));
+        recommendedCategories.add(RecommendedCategories.fromJson(v));
       });
     }
   }

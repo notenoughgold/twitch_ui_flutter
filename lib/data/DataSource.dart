@@ -11,10 +11,10 @@ class DataSource {
         .loadString("assets/homeDummyData.json");
 
     if (response != null) {
-      return Future.delayed(Duration(seconds: 1),
+      return Future.delayed(const Duration(seconds: 1),
           () => HomePageResponse.fromJson(json.decode(response)));
     } else {
-      print("loading failed");
+      debugPrint("loading failed");
       throw Exception('Failed to load');
     }
   }
@@ -25,10 +25,10 @@ class DataSource {
         .loadString("assets/discoverDummyData.json");
 
     if (response != null) {
-      return Future.delayed(Duration(seconds: 1),
+      return Future.delayed(const Duration(seconds: 1),
           () => DiscoverPageResponse.fromJson(json.decode(response)));
     } else {
-      print("loading failed");
+      debugPrint("loading failed");
       throw Exception('Failed to load');
     }
   }
@@ -39,10 +39,10 @@ class DataSource {
         .loadString("assets/browseDummyData.json");
 
     if (response != null) {
-      return Future.delayed(Duration(seconds: 1),
+      return Future.delayed(const Duration(seconds: 1),
           () => BrowsePageResponse.fromJson(json.decode(response)));
     } else {
-      print("loading failed");
+      debugPrint("loading failed");
       throw Exception('Failed to load');
     }
   }

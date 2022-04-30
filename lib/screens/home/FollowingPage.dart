@@ -2,10 +2,13 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:twitch_ui_flutter/data/DataSource.dart';
 import 'package:twitch_ui_flutter/data/models/HomePageResponse.dart';
+
 import 'LiveChannelListItem.dart';
 import 'OfflineChannelListItem.dart';
 
 class FollowingPage extends StatelessWidget {
+  const FollowingPage({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     Future _homeResponse = DataSource.fetchFollowingPageResponse(context);
@@ -13,7 +16,7 @@ class FollowingPage extends StatelessWidget {
     return CustomScrollView(slivers: <Widget>[
       SliverAppBar(
         leading: IconButton(
-          icon: CircleAvatar(
+          icon: const CircleAvatar(
             radius: 14,
             backgroundImage: CachedNetworkImageProvider(
                 'https://picsum.photos/id/1025/50/50'),
@@ -22,17 +25,17 @@ class FollowingPage extends StatelessWidget {
         ),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.notifications_none),
+            icon: const Icon(Icons.notifications_none),
             onPressed: () => debugPrint('Action Notification'),
           ),
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.comment,
             ),
             onPressed: () => debugPrint('Action 2'),
           ),
           IconButton(
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
             onPressed: () => debugPrint('Action 3'),
           ),
         ],
@@ -40,10 +43,10 @@ class FollowingPage extends StatelessWidget {
         pinned: true,
         flexibleSpace: FlexibleSpaceBar(
           background: Container(
-            padding: EdgeInsets.fromLTRB(16, 0, 0, 24),
+            padding: const EdgeInsets.fromLTRB(16, 0, 0, 24),
             height: 100,
             alignment: Alignment.bottomLeft,
-            child: Text('Following',
+            child: const Text('Following',
                 style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold)),
           ),
         ),
@@ -66,7 +69,7 @@ class FollowingPage extends StatelessWidget {
                         ),
                       );
                     } else {
-                      return new LiveChannelItem(
+                      return LiveChannelItem(
                           channel: snapshot.data.liveChannels[index - 1],
                           recommended: false);
                     }
@@ -75,7 +78,7 @@ class FollowingPage extends StatelessWidget {
                 ),
               );
             } else {
-              return SliverFillRemaining(
+              return const SliverFillRemaining(
                 child: Center(
                   child: CircularProgressIndicator(),
                 ),
@@ -85,7 +88,7 @@ class FollowingPage extends StatelessWidget {
       FutureBuilder<HomePageResponse>(
           future: _homeResponse,
           builder: (context, snapshot) {
-            if (snapshot.hasData)
+            if (snapshot.hasData) {
               return SliverList(
                 delegate: SliverChildBuilderDelegate(
                   (BuildContext context, int index) {
@@ -108,9 +111,9 @@ class FollowingPage extends StatelessWidget {
                   childCount: snapshot.data.recommendedChannels.length + 1,
                 ),
               );
-            else {
-              return SliverFillRemaining(
-                child: Container(
+            } else {
+              return const SliverFillRemaining(
+                child: SizedBox(
                   height: 0,
                   width: 0,
                 ),
@@ -120,7 +123,7 @@ class FollowingPage extends StatelessWidget {
       FutureBuilder<HomePageResponse>(
           future: _homeResponse,
           builder: (context, snapshot) {
-            if (snapshot.hasData)
+            if (snapshot.hasData) {
               return SliverList(
                 delegate: SliverChildBuilderDelegate(
                   (BuildContext context, int index) {
@@ -142,9 +145,9 @@ class FollowingPage extends StatelessWidget {
                   childCount: snapshot.data.offlineChannels.length + 1,
                 ),
               );
-            else {
-              return SliverFillRemaining(
-                child: Container(
+            } else {
+              return const SliverFillRemaining(
+                child: SizedBox(
                   height: 0,
                   width: 0,
                 ),

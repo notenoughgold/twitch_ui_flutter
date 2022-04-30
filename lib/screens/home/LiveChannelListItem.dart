@@ -6,6 +6,7 @@ import 'package:twitch_ui_flutter/data/models/HomePageResponse.dart';
 class LiveChannelItem extends StatelessWidget {
   final LiveChannels channel;
   final bool recommended;
+
   const LiveChannelItem({Key key, this.channel, this.recommended})
       : super(key: key);
 
@@ -34,16 +35,16 @@ class LiveChannelItem extends StatelessWidget {
                 Positioned(
                   child: Row(
                     children: <Widget>[
-                      CircleAvatar(
+                      const CircleAvatar(
                         radius: 5,
                         backgroundColor: Colors.red,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 4,
                       ),
                       Text(
                         channel.views,
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: Colors.white, fontWeight: FontWeight.w600),
                       )
                     ],
@@ -54,7 +55,7 @@ class LiveChannelItem extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 16.0,
           ),
           Flexible(
@@ -73,28 +74,28 @@ class LiveChannelItem extends StatelessWidget {
                               backgroundImage: CachedNetworkImageProvider(
                                   channel.streamerAvatar),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 4,
                             ),
                             Text(
                               channel.streamerName,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 16, fontWeight: FontWeight.w600),
                             ),
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 4,
                         ),
                         Text(channel.streamTitle),
-                        SizedBox(
+                        const SizedBox(
                           height: 4,
                         ),
                         Text(
                           channel.categoryName,
                           style: Theme.of(context).textTheme.caption,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 8,
                         ),
                         TagChip(
@@ -105,7 +106,7 @@ class LiveChannelItem extends StatelessWidget {
                   ),
                   if (recommended)
                     IconButton(
-                      icon: Icon(Icons.more_vert),
+                      icon: const Icon(Icons.more_vert),
                       onPressed: () => debugPrint('123'),
                     )
                 ],

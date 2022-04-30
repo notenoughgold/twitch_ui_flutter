@@ -1,5 +1,5 @@
-import 'package:twitch_ui_flutter/data/models/DiscoverPageResponse.dart';
-import 'package:twitch_ui_flutter/data/models/HomePageResponse.dart';
+import 'DiscoverPageResponse.dart';
+import 'HomePageResponse.dart';
 
 class BrowsePageResponse {
   List<LiveChannels> liveChannels;
@@ -9,15 +9,15 @@ class BrowsePageResponse {
 
   BrowsePageResponse.fromJson(Map<String, dynamic> json) {
     if (json['live_channels'] != null) {
-      liveChannels = new List<LiveChannels>();
+      liveChannels = <LiveChannels>[];
       json['live_channels'].forEach((v) {
-        liveChannels.add(new LiveChannels.fromJson(v));
+        liveChannels.add(LiveChannels.fromJson(v));
       });
     }
     if (json['categories'] != null) {
-      categories = new List<RecommendedCategories>();
+      categories = <RecommendedCategories>[];
       json['categories'].forEach((v) {
-        categories.add(new RecommendedCategories.fromJson(v));
+        categories.add(RecommendedCategories.fromJson(v));
       });
     }
   }

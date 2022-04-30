@@ -18,7 +18,7 @@ class OfflineChannelItem extends StatelessWidget {
             radius: 24,
             backgroundImage: CachedNetworkImageProvider(channel.streamerAvatar),
           ),
-          SizedBox(
+          const SizedBox(
             width: 8,
           ),
           Column(
@@ -26,7 +26,7 @@ class OfflineChannelItem extends StatelessWidget {
             children: <Widget>[
               Text(
                 channel.streamerName,
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
               ),
               if (int.parse(channel.newVideos) > 0)
                 Text(

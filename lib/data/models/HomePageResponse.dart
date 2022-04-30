@@ -8,21 +8,21 @@ class HomePageResponse {
 
   HomePageResponse.fromJson(Map<String, dynamic> json) {
     if (json['live_channels'] != null) {
-      liveChannels = new List<LiveChannels>();
+      liveChannels = <LiveChannels>[];
       json['live_channels'].forEach((v) {
-        liveChannels.add(new LiveChannels.fromJson(v));
+        liveChannels.add(LiveChannels.fromJson(v));
       });
     }
     if (json['recommended_channels'] != null) {
-      recommendedChannels = new List<LiveChannels>();
+      recommendedChannels = <LiveChannels>[];
       json['recommended_channels'].forEach((v) {
-        recommendedChannels.add(new LiveChannels.fromJson(v));
+        recommendedChannels.add(LiveChannels.fromJson(v));
       });
     }
     if (json['offline_channels'] != null) {
-      offlineChannels = new List<OfflineChannels>();
+      offlineChannels = <OfflineChannels>[];
       json['offline_channels'].forEach((v) {
-        offlineChannels.add(new OfflineChannels.fromJson(v));
+        offlineChannels.add(OfflineChannels.fromJson(v));
       });
     }
   }

@@ -37,7 +37,7 @@ class _BrowsePagePageState extends State<BrowsePage>
         return <Widget>[
           SliverAppBar(
             leading: IconButton(
-              icon: CircleAvatar(
+              icon: const CircleAvatar(
                 radius: 14,
                 backgroundImage: CachedNetworkImageProvider(
                     'https://picsum.photos/id/1025/50/50'),
@@ -46,17 +46,17 @@ class _BrowsePagePageState extends State<BrowsePage>
             ),
             actions: <Widget>[
               IconButton(
-                icon: Icon(Icons.notifications_none),
+                icon: const Icon(Icons.notifications_none),
                 onPressed: () => debugPrint('Action Notification'),
               ),
               IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.comment,
                 ),
                 onPressed: () => debugPrint('Action 2'),
               ),
               IconButton(
-                icon: Icon(Icons.search),
+                icon: const Icon(Icons.search),
                 onPressed: () => debugPrint('Action 3'),
               ),
             ],
@@ -64,19 +64,19 @@ class _BrowsePagePageState extends State<BrowsePage>
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
               background: Container(
-                padding: EdgeInsets.fromLTRB(16, 0, 0, 64),
+                padding: const EdgeInsets.fromLTRB(16, 0, 0, 64),
                 height: 100,
                 alignment: Alignment.bottomLeft,
-                child: Text('Browse',
+                child: const Text('Browse',
                     style:
-                        TextStyle(fontSize: 36, fontWeight: FontWeight.bold)),
+                         TextStyle(fontSize: 36, fontWeight: FontWeight.bold)),
               ),
             ),
             bottom: TabBar(
               controller: _tabController,
               isScrollable: true,
               indicatorSize: TabBarIndicatorSize.label,
-              tabs: <Widget>[
+              tabs: const <Widget>[
                 Tab(
                   text: "Categories",
                 ),
@@ -112,7 +112,7 @@ class _BrowsePagePageState extends State<BrowsePage>
                                 imageUrl: snapshot
                                     .data.categories[index].categoryCover,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 16,
                               ),
                               Column(
@@ -125,10 +125,10 @@ class _BrowsePagePageState extends State<BrowsePage>
                                         snapshot.data.categories[index]
                                             .categoryName,
                                         maxLines: 1,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontWeight: FontWeight.bold),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 4,
                                       ),
                                       Text(
@@ -138,7 +138,7 @@ class _BrowsePagePageState extends State<BrowsePage>
                                         style:
                                             Theme.of(context).textTheme.caption,
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 4.0,
                                       ),
                                       TagChip(
@@ -157,11 +157,13 @@ class _BrowsePagePageState extends State<BrowsePage>
                         width: MediaQuery.of(context).size.width / 2,
                         left: 16,
                         bottom: 8,
-                        child: RaisedButton(
-                          color: Colors.grey.shade900,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.grey.shade900,
+                          ),
                           child: Row(
-                            children: <Widget>[
-                              Icon(FontAwesomeIcons.slidersH),
+                            children: const <Widget>[
+                              Icon(FontAwesomeIcons.sliders),
                               SizedBox(
                                 width: 4,
                               ),
@@ -190,8 +192,8 @@ class _BrowsePagePageState extends State<BrowsePage>
                     ],
                   );
                 } else {
-                  return Center(
-                    child: CircularProgressIndicator(),
+                  return const Center(
+                    child:  CircularProgressIndicator(),
                   );
                 }
               }),
@@ -204,151 +206,150 @@ class _BrowsePagePageState extends State<BrowsePage>
                       ListView.builder(
                           itemCount: snapshot.data.categories.length,
                           itemBuilder: (BuildContext context, int index) =>
-                              Container(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: <Widget>[
-                                    Stack(
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Stack(
+                                    children: <Widget>[
+                                      Ink.image(
+                                        height: 200,
+                                        width:
+                                            MediaQuery.of(context).size.width,
+                                        fit: BoxFit.cover,
+                                        image: CachedNetworkImageProvider(
+                                            snapshot.data.liveChannels[index]
+                                                .thumbnail),
+                                        child: InkWell(
+                                          onTap: () {},
+                                        ),
+                                      ),
+                                      Positioned(
+                                        left: 10,
+                                        top: 10,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              color: Colors.red[600],
+                                              borderRadius:
+                                                  BorderRadius.circular(4.0)),
+                                          child: const Padding(
+                                            padding:
+                                                EdgeInsets.all(2.0),
+                                            child: Text(
+                                              'LIVE',
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight:
+                                                      FontWeight.w600),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Positioned(
+                                        left: 10,
+                                        bottom: 10,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              color: Colors.black54,
+                                              borderRadius:
+                                                  BorderRadius.circular(4.0)),
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsets.all(2.0),
+                                            child: Text(
+                                              snapshot
+                                                      .data
+                                                      .liveChannels[index]
+                                                      .views +
+                                                  ' Viewers',
+                                              style: const TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight:
+                                                      FontWeight.w400),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.fromLTRB(
+                                        8, 8, 8, 24),
+                                    child: Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
                                       children: <Widget>[
-                                        Ink.image(
-                                          height: 200,
-                                          width:
-                                              MediaQuery.of(context).size.width,
-                                          fit: BoxFit.cover,
-                                          image: CachedNetworkImageProvider(
-                                              snapshot.data.liveChannels[index]
-                                                  .thumbnail),
-                                          child: InkWell(
-                                            onTap: () {},
-                                          ),
+                                        CircleAvatar(
+                                          backgroundImage:
+                                              CachedNetworkImageProvider(
+                                                  snapshot
+                                                      .data
+                                                      .liveChannels[index]
+                                                      .streamerAvatar),
                                         ),
-                                        Positioned(
-                                          left: 10,
-                                          top: 10,
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                                color: Colors.red[600],
-                                                borderRadius:
-                                                    BorderRadius.circular(4.0)),
-                                            child: Padding(
-                                              padding:
-                                                  const EdgeInsets.all(2.0),
-                                              child: Text(
-                                                'LIVE',
-                                                style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontWeight:
-                                                        FontWeight.w600),
-                                              ),
-                                            ),
-                                          ),
+                                        const SizedBox(
+                                          width: 8,
                                         ),
-                                        Positioned(
-                                          left: 10,
-                                          bottom: 10,
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                                color: Colors.black54,
-                                                borderRadius:
-                                                    BorderRadius.circular(4.0)),
-                                            child: Padding(
-                                              padding:
-                                                  const EdgeInsets.all(2.0),
-                                              child: Text(
+                                        Flexible(
+                                          fit: FlexFit.tight,
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: <Widget>[
+                                              Text(
                                                 snapshot
-                                                        .data
-                                                        .liveChannels[index]
-                                                        .views +
-                                                    ' Viewers',
-                                                style: TextStyle(
-                                                    color: Colors.white,
+                                                    .data
+                                                    .liveChannels[index]
+                                                    .streamerName,
+                                                style: const TextStyle(
                                                     fontWeight:
-                                                        FontWeight.w400),
+                                                        FontWeight.bold),
                                               ),
-                                            ),
+                                              const SizedBox(
+                                                height: 4,
+                                              ),
+                                              Text(snapshot
+                                                  .data
+                                                  .liveChannels[index]
+                                                  .streamTitle),
+                                              const SizedBox(
+                                                height: 4,
+                                              ),
+                                              Text(
+                                                snapshot
+                                                    .data
+                                                    .liveChannels[index]
+                                                    .categoryName,
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .caption,
+                                              ),
+                                              const SizedBox(
+                                                height: 4.0,
+                                              ),
+                                              TagChip(
+                                                label: snapshot.data
+                                                    .liveChannels[index].tag,
+                                              )
+                                            ],
                                           ),
                                         ),
                                       ],
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.fromLTRB(
-                                          8, 8, 8, 24),
-                                      child: Row(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: <Widget>[
-                                          CircleAvatar(
-                                            backgroundImage:
-                                                CachedNetworkImageProvider(
-                                                    snapshot
-                                                        .data
-                                                        .liveChannels[index]
-                                                        .streamerAvatar),
-                                          ),
-                                          SizedBox(
-                                            width: 8,
-                                          ),
-                                          Flexible(
-                                            fit: FlexFit.tight,
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: <Widget>[
-                                                Text(
-                                                  snapshot
-                                                      .data
-                                                      .liveChannels[index]
-                                                      .streamerName,
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.bold),
-                                                ),
-                                                SizedBox(
-                                                  height: 4,
-                                                ),
-                                                Text(snapshot
-                                                    .data
-                                                    .liveChannels[index]
-                                                    .streamTitle),
-                                                SizedBox(
-                                                  height: 4,
-                                                ),
-                                                Text(
-                                                  snapshot
-                                                      .data
-                                                      .liveChannels[index]
-                                                      .categoryName,
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .caption,
-                                                ),
-                                                SizedBox(
-                                                  height: 4.0,
-                                                ),
-                                                TagChip(
-                                                  label: snapshot.data
-                                                      .liveChannels[index].tag,
-                                                )
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    )
-                                  ],
-                                ),
+                                  )
+                                ],
                               )),
                       Positioned(
                         width: MediaQuery.of(context).size.width / 2,
                         left: 16,
                         bottom: 8,
-                        child: RaisedButton(
-                          color: Colors.grey.shade900,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              primary: Colors.grey.shade900),
                           child: Row(
-                            children: <Widget>[
-                              Icon(FontAwesomeIcons.slidersH),
+                            children: const <Widget>[
+                              Icon(FontAwesomeIcons.sliders),
                               SizedBox(
                                 width: 4,
                               ),
@@ -377,7 +378,7 @@ class _BrowsePagePageState extends State<BrowsePage>
                     ],
                   );
                 } else {
-                  return Center(
+                  return const Center(
                     child: CircularProgressIndicator(),
                   );
                 }

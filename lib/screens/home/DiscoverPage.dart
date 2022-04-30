@@ -15,7 +15,7 @@ class DiscoverPage extends StatefulWidget {
 class _DiscoverPageState extends State<DiscoverPage> {
   int _carouselIndex = 0;
 
-  void _onCarouselMovement(int index) {
+  void _onCarouselMovement(int index, CarouselPageChangedReason reason) {
     debugPrint('carousel movement');
     setState(() {
       _carouselIndex = index;
@@ -29,7 +29,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
     return CustomScrollView(slivers: <Widget>[
       SliverAppBar(
         leading: IconButton(
-          icon: CircleAvatar(
+          icon: const CircleAvatar(
             radius: 14,
             backgroundImage: CachedNetworkImageProvider(
                 'https://picsum.photos/id/1025/50/50'),
@@ -38,17 +38,17 @@ class _DiscoverPageState extends State<DiscoverPage> {
         ),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.notifications_none),
+            icon: const Icon(Icons.notifications_none),
             onPressed: () => debugPrint('Action Notification'),
           ),
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.comment,
             ),
             onPressed: () => debugPrint('Action 2'),
           ),
           IconButton(
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
             onPressed: () => debugPrint('Action 3'),
           ),
         ],
@@ -56,10 +56,10 @@ class _DiscoverPageState extends State<DiscoverPage> {
         pinned: true,
         flexibleSpace: FlexibleSpaceBar(
           background: Container(
-            padding: EdgeInsets.fromLTRB(16, 0, 0, 24),
+            padding: const EdgeInsets.fromLTRB(16, 0, 0, 24),
             height: 100,
             alignment: Alignment.bottomLeft,
-            child: Text('Discover',
+            child: const Text('Discover',
                 style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold)),
           ),
         ),
@@ -75,14 +75,11 @@ class _DiscoverPageState extends State<DiscoverPage> {
                       return Padding(
                           padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
                           child: CarouselSlider(
-                            height: 180.0,
-                            enlargeCenterPage: true,
-                            onPageChanged: _onCarouselMovement,
                             items: snapshot.data.topChannels.map((i) {
                               return Builder(
                                 builder: (BuildContext context) {
                                   return Container(
-                                      margin: EdgeInsets.all(3.0),
+                                      margin: const EdgeInsets.all(3.0),
                                       width: MediaQuery.of(context).size.width,
                                       child: CachedNetworkImage(
                                         fit: BoxFit.cover,
@@ -91,6 +88,11 @@ class _DiscoverPageState extends State<DiscoverPage> {
                                 },
                               );
                             }).toList(),
+                            options: CarouselOptions(
+                              height: 180.0,
+                              onPageChanged: _onCarouselMovement,
+                              enlargeCenterPage: true,
+                            ),
                           ));
                     } else if (index == 1) {
                       return Padding(
@@ -105,9 +107,9 @@ class _DiscoverPageState extends State<DiscoverPage> {
                                         .data
                                         .topChannels[_carouselIndex]
                                         .streamerName,
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.w700)),
-                                TextSpan(
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.w700)),
+                                const TextSpan(
                                   text: ' streaming ',
                                 ),
                                 TextSpan(
@@ -115,11 +117,11 @@ class _DiscoverPageState extends State<DiscoverPage> {
                                         .data
                                         .topChannels[_carouselIndex]
                                         .categoryName,
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.w700)),
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.w700)),
                               ]),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 8.0,
                             ),
                             TagChip(
@@ -145,7 +147,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
                                       .color),
                             ),
                           ),
-                          Container(
+                          SizedBox(
                             height: 270,
                             child: ListView.builder(
                               scrollDirection: Axis.horizontal,
@@ -155,8 +157,8 @@ class _DiscoverPageState extends State<DiscoverPage> {
                                 return Container(
                                   width: 320,
                                   padding: index == 0
-                                      ? EdgeInsets.fromLTRB(16, 0, 8, 0)
-                                      : EdgeInsets.fromLTRB(0, 0, 8, 0),
+                                      ? const EdgeInsets.fromLTRB(16, 0, 8, 0)
+                                      : const EdgeInsets.fromLTRB(0, 0, 8, 0),
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
@@ -181,9 +183,8 @@ class _DiscoverPageState extends State<DiscoverPage> {
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           4.0)),
-                                              child: Padding(
-                                                padding:
-                                                    const EdgeInsets.all(2.0),
+                                              child: const Padding(
+                                                padding: EdgeInsets.all(2.0),
                                                 child: Text(
                                                   'LIVE',
                                                   style: TextStyle(
@@ -213,7 +214,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
                                                               index]
                                                           .views +
                                                       ' Viewers',
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                       color: Colors.white,
                                                       fontWeight:
                                                           FontWeight.w400),
@@ -241,7 +242,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
                                                               index]
                                                           .streamerAvatar),
                                             ),
-                                            SizedBox(
+                                            const SizedBox(
                                               width: 8,
                                             ),
                                             Flexible(
@@ -256,11 +257,11 @@ class _DiscoverPageState extends State<DiscoverPage> {
                                                         .recommendedChannels[
                                                             index]
                                                         .streamerName,
-                                                    style: TextStyle(
+                                                    style: const TextStyle(
                                                         fontWeight:
                                                             FontWeight.bold),
                                                   ),
-                                                  SizedBox(
+                                                  const SizedBox(
                                                     height: 4.0,
                                                   ),
                                                   Text(snapshot
@@ -268,7 +269,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
                                                       .recommendedChannels[
                                                           index]
                                                       .streamTitle),
-                                                  SizedBox(
+                                                  const SizedBox(
                                                     height: 4.0,
                                                   ),
                                                   Text(
@@ -281,7 +282,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
                                                         .textTheme
                                                         .caption,
                                                   ),
-                                                  SizedBox(
+                                                  const SizedBox(
                                                     height: 4.0,
                                                   ),
                                                   TagChip(
@@ -295,7 +296,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
                                               ),
                                             ),
                                             IconButton(
-                                              icon: Icon(Icons.more_vert),
+                                              icon: const Icon(Icons.more_vert),
                                               onPressed: () =>
                                                   debugPrint('123'),
                                             )
@@ -326,7 +327,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
                                       .color),
                             ),
                           ),
-                          Container(
+                          SizedBox(
                             height: 270,
                             child: ListView.builder(
                               scrollDirection: Axis.horizontal,
@@ -336,8 +337,8 @@ class _DiscoverPageState extends State<DiscoverPage> {
                                 return Container(
                                   width: 125,
                                   padding: index == 0
-                                      ? EdgeInsets.fromLTRB(16, 0, 8, 0)
-                                      : EdgeInsets.fromLTRB(0, 0, 8, 0),
+                                      ? const EdgeInsets.fromLTRB(16, 0, 8, 0)
+                                      : const EdgeInsets.fromLTRB(0, 0, 8, 0),
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
@@ -383,7 +384,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
                                                       .textTheme
                                                       .caption,
                                                 ),
-                                                SizedBox(
+                                                const SizedBox(
                                                   height: 4,
                                                 ),
                                                 TagChip(
@@ -407,7 +408,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
                         ],
                       );
                     } else {
-                      return Container(
+                      return const SizedBox(
                         width: 0,
                         height: 0,
                       );
@@ -417,7 +418,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
                 ),
               );
             } else {
-              return SliverFillRemaining(
+              return const SliverFillRemaining(
                 child: Center(
                   child: CircularProgressIndicator(),
                 ),

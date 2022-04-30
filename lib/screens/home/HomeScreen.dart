@@ -26,10 +26,10 @@ class _HomeScreenState extends State<HomeScreen> {
         return FollowingPage();
         break;
       case 1:
-        return DiscoverPage();
+        return const DiscoverPage();
         break;
       default:
-        return BrowsePage();
+        return const BrowsePage();
     }
   }
 
@@ -43,19 +43,19 @@ class _HomeScreenState extends State<HomeScreen> {
             BottomNavigationBarItem(
               icon: Icon(FontAwesomeIcons.heart),
               activeIcon: Icon(FontAwesomeIcons.solidHeart),
-              title: Text('Following'),
+              label: 'Following',
             ),
             BottomNavigationBarItem(
               icon: Icon(FontAwesomeIcons.compass),
               activeIcon: Icon(
                 FontAwesomeIcons.solidCompass,
               ),
-              title: Text('Discover'),
+              label: 'Discover',
             ),
             BottomNavigationBarItem(
               icon: Icon(FontAwesomeIcons.clone),
               activeIcon: Icon(FontAwesomeIcons.solidClone),
-              title: Text('Browse'),
+              label: 'Browse',
             ),
           ],
           currentIndex: _selectedIndex,
