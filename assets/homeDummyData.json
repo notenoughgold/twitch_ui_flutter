@@ -2,27 +2,27 @@
     "live_channels": [
         {
             "streamer_name": "Jake",
-            "streamer_avatar": "http://lorempixel.com/output/cats-q-c-100-100-9.jpg",
+            "streamer_avatar": "https://picsum.photos/id/1013/534/300",
             "stream_title": "I don't know",
             "category_name": "Just Chatting",
             "tag": "English",
-            "thumbnail": "http://lorempixel.com/output/sports-q-c-600-300-10.jpg",
+            "thumbnail": "https://picsum.photos/id/1022/534/300",
             "views": "4.2K"
         },
         {
             "streamer_name": "Tommy",
-            "streamer_avatar": "http://lorempixel.com/output/cats-q-c-100-100-7.jpg",
+            "streamer_avatar": "https://picsum.photos/id/1012/534/300",
             "stream_title": "Friday stream",
             "category_name": "StarCraft",
             "tag": "Strategy",
-            "thumbnail": "http://lorempixel.com/output/city-q-c-600-300-2.jpg",
+            "thumbnail": "https://picsum.photos/id/1021/534/300",
             "views": "513"
         }
     ],
     "recommended_channels": [
         {
             "streamer_name": "King",
-            "streamer_avatar": "http://lorempixel.com/output/cats-q-c-100-100-1.jpg",
+            "streamer_avatar": "https://picsum.photos/id/1001/534/300",
             "stream_title": "Kappa",
             "category_name": "World of Warcraft",
             "tag": "MMORPG",
@@ -31,7 +31,7 @@
         },
         {
             "streamer_name": "Erik",
-            "streamer_avatar": "http://lorempixel.com/output/animals-q-c-100-100-10.jpg",
+            "streamer_avatar": "https://picsum.photos/id/1002/534/300",
             "stream_title": "Yo",
             "category_name": "StarCraft",
             "tag": "Strategy",
@@ -40,7 +40,7 @@
         },
         {
             "streamer_name": "Lily",
-            "streamer_avatar": "http://lorempixel.com/output/animals-q-c-100-100-8.jpg",
+            "streamer_avatar": "https://picsum.photos/id/1003/534/300",
             "stream_title": "Chill Stream",
             "category_name": "League of Legends",
             "tag": "Competitive",
@@ -49,11 +49,11 @@
         },
         {
             "streamer_name": "Molly",
-            "streamer_avatar": "http://lorempixel.com/output/animals-q-c-100-100-9.jpg",
+            "streamer_avatar": "https://picsum.photos/id/1004/534/300",
             "stream_title": "Hey guys",
             "category_name": "Music",
             "tag": "English",
-            "thumbnail": "http://lorempixel.com/output/nature-q-c-600-300-6.jpg",
+            "thumbnail": "https://picsum.photos/id/1032/534/300",
             "views": "69"
         }
     ],

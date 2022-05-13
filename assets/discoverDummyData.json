@@ -4,14 +4,14 @@
             "streamer_name": "Jake",
             "category_name": "Just Chatting",
             "tag": "English",
-            "thumbnail": "http://lorempixel.com/output/sports-q-c-600-300-10.jpg",
+            "thumbnail": "https://picsum.photos/id/1033/600/300",
             "views": "4.2K"
         },
         {
             "streamer_name": "Tommy",
             "category_name": "StarCraft",
             "tag": "Strategy",
-            "thumbnail": "http://lorempixel.com/output/city-q-c-600-300-2.jpg",
+            "thumbnail": "https://picsum.photos/id/1006/600/300",
             "views": "16.2K"
         },
         {
@@ -25,7 +25,7 @@
     "recommended_channels": [
         {
             "streamer_name": "King",
-            "streamer_avatar": "http://lorempixel.com/output/cats-q-c-100-100-1.jpg",
+            "streamer_avatar": "https://picsum.photos/id/1001/534/300",
             "stream_title": "Kappa",
             "category_name": "World of Warcraft",
             "tag": "MMORPG",
@@ -34,7 +34,7 @@
         },
         {
             "streamer_name": "Erik",
-            "streamer_avatar": "http://lorempixel.com/output/animals-q-c-100-100-10.jpg",
+            "streamer_avatar": "https://picsum.photos/id/1005/534/300",
             "stream_title": "Yo",
             "category_name": "StarCraft",
             "tag": "Strategy",
@@ -43,7 +43,7 @@
         },
         {
             "streamer_name": "Lily",
-            "streamer_avatar": "http://lorempixel.com/output/animals-q-c-100-100-8.jpg",
+            "streamer_avatar": "https://picsum.photos/id/1006/534/300",
             "stream_title": "Chill Stream",
             "category_name": "League of Legends",
             "tag": "Competitive",
@@ -52,11 +52,11 @@
         },
         {
             "streamer_name": "Molly",
-            "streamer_avatar": "http://lorempixel.com/output/animals-q-c-100-100-9.jpg",
+            "streamer_avatar": "https://picsum.photos/id/1008/534/300",
             "stream_title": "Hey guys",
             "category_name": "Music",
             "tag": "English",
-            "thumbnail": "http://lorempixel.com/output/nature-q-c-600-300-6.jpg",
+            "thumbnail": "https://picsum.photos/id/1006/534/300",
             "views": "69"
         }
     ],
